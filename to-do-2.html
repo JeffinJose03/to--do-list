@@ -7,16 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color:green;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
-
         .container {
-            background: #fff;
+            background:white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -81,7 +80,6 @@
             line-height: 1;
             color: #dc3545;
         }
-
         li button:hover {
             color: #c82333;
         }
@@ -101,29 +99,24 @@
             const todoForm = document.getElementById('todo-form');
             const todoInput = document.getElementById('todo-input');
             const todoList = document.getElementById('todo-list');
-
             todoForm.addEventListener('submit', (event) => {
                 event.preventDefault();
                 addTodoItem(todoInput.value);
                 todoInput.value = '';
             });
-
             function addTodoItem(task) {
                 const li = document.createElement('li');
                 li.textContent = task;
-
                 const completeButton = document.createElement('button');
                 completeButton.textContent = '✓';
                 completeButton.addEventListener('click', () => {
                     li.classList.toggle('completed');
                 });
-
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = '✗';
                 deleteButton.addEventListener('click', () => {
                     li.remove();
                 });
-
                 li.appendChild(completeButton);
                 li.appendChild(deleteButton);
 
